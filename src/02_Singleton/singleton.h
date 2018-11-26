@@ -40,4 +40,18 @@ private:
     Singleton&operator = (const Singleton&); // 赋值符构造函数，无需实现
 };
 
+// 单例 - 懒汉式/饿汉式公用
+// 懒汉模式 就是指单例实例在程序运行时被立即初始化
+class Singleton2
+{
+public:
+    static Singleton2* GetInstance();
+
+private:
+    Singleton2() {}  // 构造函数（被保护）
+
+private:
+    static Singleton2 *m_pSingleton;  // 指向单例对象的指针
+};
+
 #endif //SWORDTOOFFER_SINGLETON_H
